@@ -15,10 +15,13 @@ app.secret_key = os.environ.get('SECRET_KEY', 'super_secret_key_for_scope_nexa_a
 # Initialize Supabase client if credentials are provided
 supabase_url = os.environ.get('SUPABASE_URL')
 supabase_key = os.environ.get('SUPABASE_ANON_KEY')
+supabase = None
 if supabase_url and supabase_key:
-    supabase: Client = create_client(supabase_url, supabase_key)
-else:
-    supabase = None
+    try:
+        supabase: Client = create_client(supabase_url, supabase_key)
+    except Exception as e:
+        print(f"Supabase client initialization failed: {e}")
+        supabase = None
 
 # Check for database URL: prefer Supabase DB URL, then Vercel Postgres, then standard DATABASE_URL, fallback to SQLite
 database_url = os.environ.get('SUPABASE_DB_URL') or os.environ.get('POSTGRES_URL') or os.environ.get('DATABASE_URL') or 'sqlite:///scope_nexa.db'
