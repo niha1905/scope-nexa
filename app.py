@@ -2,7 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
+from dotenv import load_dotenv
 from supabase import create_client, Client
+
+# Load environment variables from .env file if present
+load_dotenv()
 
 app = Flask(__name__, instance_relative_config=False)  # Disable instance folder for serverless
 app.instance_path = '/tmp'  # Set to writable location for SQLAlchemy
