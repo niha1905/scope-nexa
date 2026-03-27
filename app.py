@@ -5,6 +5,7 @@ import os
 from supabase import create_client, Client
 
 app = Flask(__name__, instance_relative_config=False)  # Disable instance folder for serverless
+app.instance_path = '/tmp'  # Set to writable location for SQLAlchemy
 app.secret_key = os.environ.get('SECRET_KEY', 'super_secret_key_for_scope_nexa_ai')
 
 # Initialize Supabase client if credentials are provided
