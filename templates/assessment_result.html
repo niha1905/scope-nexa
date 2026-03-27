@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="bg-silver min-h-[70vh] py-20 flex items-center justify-center p-4">
+    <div class="w-full max-w-3xl">
+        <div class="bg-white rounded-3xl shadow-premium overflow-hidden border border-gray-100" data-aos="zoom-in">
+            
+            <!-- Result Header -->
+            <div class="bg-navy relative p-10 text-center overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-navy to-blue-900"></div>
+                <!-- Circle decoration -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 border-[16px] border-white/5 rounded-full"></div>
+                <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-accent/20 rounded-full blur-2xl"></div>
+                
+                <div class="relative z-10">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full backdrop-blur-md mb-6 border border-white/20">
+                        <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            {% if score >= 20 %}
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            {% elif score >= 10 %}
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            {% else %}
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            {% endif %}
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-heading font-bold text-white mb-2">Assessment Complete</h1>
+                    <p class="text-blue-200">Thank you for taking the test, {{ name }}. Here are your results.</p>
+                </div>
+            </div>
+            
+            <!-- Score Display -->
+            <div class="p-10 text-center">
+                <div class="mb-8">
+                    <span class="text-sm font-bold text-gray-400 uppercase tracking-widest block mb-2">Readiness Score</span>
+                    <div class="flex items-baseline justify-center">
+                        <span class="text-6xl font-heading font-black text-navy">{{ score }}</span>
+                        <span class="text-3xl text-gray-300 font-bold">/30</span>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-100 rounded-full h-4 mb-4 overflow-hidden shadow-inner">
+                    <div class="h-4 rounded-full {{ 'bg-red-500' if score < 10 else ('bg-yellow-400' if score < 20 else 'bg-green-500') }} transition-all duration-1000" style="width: {{ (score/30)*100 }}%"></div>
+                </div>
+                
+                <div class="flex justify-between text-xs font-bold text-gray-400 mb-10 px-1">
+                    <span>Explorer (0-10)</span>
+                    <span>Adopter (11-20)</span>
+                    <span>Innovator (21-30)</span>
+                </div>
+                
+                <!-- Feedback Text -->
+                <div class="bg-blue-50 rounded-xl p-8 border border-blue-100 mb-10 text-left">
+                    <h3 class="text-xl font-heading font-bold text-navy mb-3">
+                        {% if score >= 20 %}
+                        You're an AI Innovator!
+                        {% elif score >= 10 %}
+                        You're an AI Adopter
+                        {% else %}
+                        You're an AI Explorer
+                        {% endif %}
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        {% if score >= 20 %}
+                        Your organization has a strong foundation for AI adoption. You have policies in place and structured data. The next step is to leverage custom AI models, specialized department pipelines, and bespoke automation to gain a vast competitive edge over your peers.
+                        {% elif score >= 10 %}
+                        Your team is actively engaging with AI, but you may lack the centralized governance or data structure to scale these efforts securely. It's time to transition from individual experimentation to cohesive, department-wide AI implementations and clear ROI frameworks.
+                        {% else %}
+                        Your organization is at the beginning of its AI journey. This is a critical point. Rushing into scattered tool adoption can cause tech debt and security risks. We recommend starting with robust AI Literacy Training to align leadership and establish a secure baseline before implementation.
+                        {% endif %}
+                    </p>
+                </div>
+                
+                <h4 class="font-bold text-gray-800 mb-4">Your Next Step:</h4>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="{{ url_for('contact') }}" class="btn-primary text-center">Schedule Strategy Review</a>
+                    <a href="{{ url_for('home') }}" class="btn-outline text-center">Return to Home</a>
+                </div>
+                
+                <p class="text-xs text-gray-400 mt-8">A detailed report has been sent to your email.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

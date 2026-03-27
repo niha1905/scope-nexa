@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-navy text-white overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-40">
+    <!-- Abstract Background Elements -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] rounded-full bg-accent opacity-20 blur-[100px] animate-float"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] rounded-full bg-blue-400 opacity-20 blur-[100px] animate-float-delayed"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
+        <div class="text-center max-w-5xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="inline-block mb-6 px-6 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-bold tracking-widest text-blue-200 backdrop-blur-md shadow-lg uppercase">
+                THE WORKFORCE INTELLIGENCE DIVISION OF SCOPE HR
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-black tracking-tighter mb-8 leading-[1.1] text-white">
+                Building <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-accent filter drop-shadow-lg">AI-Ready Organisations</span> <br class="hidden md:block"> for the Future of Work
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-50/90 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+                Scope Nexa AI empowers businesses with strategic AI training, software-based AI solutions, and custom AI tool development. Transition from AI curiosity to measurable AI capability.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="{{ url_for('contact') }}" class="btn-primary text-lg">Book a Consultation</a>
+                <a href="{{ url_for('services') }}" class="inline-block border-2 border-white text-white font-heading font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-navy transition-all duration-300 text-lg">Explore Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats/Trust Bar -->
+<section class="bg-gradient-to-r from-accent to-blue-600 py-10 relative -mt-16 z-20 mx-4 lg:mx-auto max-w-6xl rounded-3xl shadow-[0_30px_60px_-15px_rgba(46,107,255,0.4)] border border-white/20 backdrop-blur-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x divide-white/20 items-center">
+        <div class="px-4 hover:scale-105 transition-transform duration-300">
+            <div class="text-4xl font-heading font-black text-white mb-2 drop-shadow-md">Custom AI</div>
+            <div class="text-blue-100 text-base font-bold uppercase tracking-wider">Tool Development</div>
+        </div>
+        <div class="px-4 hover:scale-105 transition-transform duration-300">
+            <div class="text-4xl font-heading font-black text-white mb-2 drop-shadow-md">Software</div>
+            <div class="text-blue-100 text-base font-bold uppercase tracking-wider">Based AI Solutions</div>
+        </div>
+        <div class="px-4 hover:scale-105 transition-transform duration-300">
+            <div class="text-4xl font-heading font-black text-white mb-2 drop-shadow-md">Strategy</div>
+            <div class="text-blue-100 text-base font-bold uppercase tracking-wider">Leadership Alignment</div>
+        </div>
+        <div class="px-4 hover:scale-105 transition-transform duration-300">
+            <div class="text-4xl font-heading font-black text-white mb-2 drop-shadow-md">Practical</div>
+            <div class="text-blue-100 text-base font-bold uppercase tracking-wider">Industry Training</div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Scope Nexa AI -->
+<section class="py-32 bg-white relative overflow-hidden">
+    <!-- Decor -->
+    <div class="absolute -left-40 top-40 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 text-navy tracking-tight">Why Scope Nexa AI?</h2>
+            <div class="w-32 h-1.5 bg-gradient-to-r from-accent to-blue-400 mx-auto rounded-full"></div>
+            <p class="mt-8 text-gray-500 max-w-3xl mx-auto text-xl leading-relaxed">We don't just talk about AI. We implement it, integrate it, and train your teams to leverage it for measurable ROI.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Feature 1 -->
+            <div class="glass-card bg-[#f8fafc]/80 border-none group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-gradient-to-br from-navy to-blue-900 rounded-2xl flex items-center justify-center mb-8 text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                </div>
+                <h3 class="text-2xl font-heading font-bold mb-4 text-navy group-hover:text-accent transition-colors">Software Based AI Solutions <span class="text-xs bg-accent/10 px-2 py-1 rounded text-accent ml-2 uppercase tracking-wider align-middle">Coming Soon</span></h3>
+                <p class="text-gray-600 text-lg">Off-the-shelf and customizable AI software platforms designed to solve specific operational pain points.</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="glass-card bg-silver/30 border-none" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-accent rounded-lg flex items-center justify-center mb-6 text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold mb-3">Custom AI Tool<br>Development</h3>
+                <p class="text-gray-600">We build bespoke internal AI tools and automation workflows designed specifically for your unique business logic.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="glass-card bg-silver/30 border-none" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold mb-3">Leadership Strategy Alignment</h3>
+                <p class="text-gray-600">Executive guidance on AI adoption, ROI frameworks, risk assessment, and governance for sustainable growth.</p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="glass-card bg-silver/30 border-none" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 bg-accent rounded-lg flex items-center justify-center mb-6 text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold mb-3">Practical, Industry-Focused Training</h3>
+                <p class="text-gray-600">Hands-on literacy and upskilling programs tailored to your industry, ensuring your workforce is fundamentally AI-ready.</p>
+            </div>
+            
+            <!-- Feature 5 -->
+            <div class="glass-card bg-silver/30 border-none md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
+                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold mb-3">Post-Training Documentation & Support</h3>
+                <p class="text-gray-600">Continuous support and clear documentation to ensure AI practices are standardized and retained long-term.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Core Services -->
+<section class="py-32 bg-gray-50 relative overflow-hidden border-t border-gray-100">
+    <!-- Decorative Elements -->
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] border-[40px] border-blue-50 rounded-full z-0 animate-float-delayed"></div>
+    <div class="absolute left-10 top-20 w-64 h-64 bg-accent/5 rounded-full z-0 blur-3xl animate-float"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20" data-aos="fade-up" data-aos-duration="1000">
+            <div class="max-w-3xl">
+                <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 tracking-tight text-navy">Our Core Services</h2>
+                <div class="w-32 h-1.5 bg-gradient-to-r from-accent to-blue-400 rounded-full mb-8"></div>
+                <p class="text-gray-500 text-xl leading-relaxed">Comprehensive, enterprise-grade solutions designed to elevate human potential through artificial intelligence.</p>
+            </div>
+            <a href="{{ url_for('services') }}" class="mt-8 md:mt-0 text-accent font-bold text-lg flex items-center gap-3 hover:gap-5 transition-all pb-2 border-b-2 border-transparent hover:border-accent">
+                Explore All Services <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Service Card 1 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-premium group cursor-pointer border border-gray-100/50 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500" onclick="window.location.href='{{ url_for('services') }}'" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-2 bg-gradient-to-r from-navy to-blue-800 transition-all duration-500 group-hover:from-accent group-hover:to-blue-400"></div>
+                <div class="p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-gray-50 rounded-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-heading font-black mb-6 text-navy group-hover:text-accent transition-colors">AI Literacy Training</h3>
+                        <p class="text-gray-600 text-lg mb-8 leading-relaxed">Build a foundational understanding of AI technologies across your entire workforce to foster an innovation-ready culture.</p>
+                        <span class="text-base font-bold text-navy uppercase tracking-wider group-hover:text-accent transition-colors flex items-center gap-2">Learn More <svg class="w-5 h-5 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Card 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-premium group cursor-pointer" onclick="window.location.href='{{ url_for('services') }}'" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-2 bg-navy transition-all duration-300 group-hover:bg-accent"></div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-heading font-bold mb-4 group-hover:text-accent transition-colors">Custom AI Upskilling</h3>
+                    <p class="text-gray-600 mb-6">Targeted training programs that equip specific teams with the prompt engineering and AI tool expertise they need.</p>
+                    <span class="text-sm font-bold text-navy uppercase tracking-wider group-hover:text-accent transition-colors">Learn More &rarr;</span>
+                </div>
+            </div>
+            
+            <!-- Service Card 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-premium group cursor-pointer" onclick="window.location.href='{{ url_for('services') }}'" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-2 bg-navy transition-all duration-300 group-hover:bg-accent"></div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-heading font-bold mb-4 group-hover:text-accent transition-colors">AI Strategy for Leaders</h3>
+                    <p class="text-gray-600 mb-6">Executive workshops focused on identifying high-ROI AI opportunities, managing risk, and architecting the future of your business.</p>
+                    <span class="text-sm font-bold text-navy uppercase tracking-wider group-hover:text-accent transition-colors">Learn More &rarr;</span>
+                </div>
+            </div>
+            
+            <!-- Service Card 4 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                <div class="h-2 bg-gray-300"></div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-heading font-bold mb-4 text-gray-400">Software Based AI Solutions</h3>
+                    <p class="text-gray-500 mb-6">Powerful, scalable AI software platforms tailored for modern enterprises.</p>
+                    <span class="text-sm font-bold text-accent uppercase tracking-wider bg-accent/10 px-3 py-1 rounded">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Feedback / Testimonial -->
+<section class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute right-0 top-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 tracking-tight text-navy">Client Success Stories</h2>
+            <div class="w-32 h-1.5 bg-gradient-to-r from-accent to-blue-400 mx-auto rounded-full mb-8"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-gradient-to-br from-navy to-blue-900 rounded-3xl p-10 md:p-14 shadow-[0_20px_50px_-10px_rgba(10,31,68,0.4)] text-white relative group transition-transform hover:-translate-y-2 duration-500">
+                <!-- Quote Icon -->
+                <div class="absolute top-0 right-10 -mt-6">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                    </div>
+                </div>
+                
+                <p class="text-2xl md:text-3xl font-light italic leading-relaxed text-blue-100 mb-10 tracking-wide font-heading">
+                    "We are rapidly implementing our new AI training architecture. Full feedback and transformative ROI metrics coming soon..."
+                </p>
+                <div class="flex items-center gap-5">
+                    <div class="w-16 h-16 bg-white/10 rounded-full border border-white/20 flex items-center justify-center font-heading font-black text-2xl drop-shadow-md">R</div>
+                    <div>
+                        <h4 class="font-heading font-bold text-2xl drop-shadow-sm tracking-tight">RLD Developers</h4>
+                        <p class="text-sm font-bold tracking-widest text-accent uppercase">First Client & Partner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-32 bg-navy relative overflow-hidden">
+    <!-- Animated background patterns -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy to-blue-900/80"></div>
+    <div class="absolute right-0 top-0 w-1/2 h-full bg-accent opacity-20 blur-2xl animate-float" style="clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="zoom-in" data-aos-duration="1200">
+        <h2 class="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white mb-8 tracking-tight">Strategic AI for <br class="hidden md:block"><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-accent">Enterprise Growth.</span></h2>
+        <p class="text-xl md:text-3xl text-blue-100/80 mb-12 max-w-3xl mx-auto font-light leading-relaxed">Discover how AI can streamline operations, reduce overhead, and supercharge your team's productivity.</p>
+        <div class="inline-block relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-accent to-blue-400 rounded-full blur-lg opacity-70 animate-pulse"></div>
+            <a href="{{ url_for('contact') }}" class="btn-primary relative px-12 py-5 text-xl tracking-wide uppercase">Start Your AI Journey</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

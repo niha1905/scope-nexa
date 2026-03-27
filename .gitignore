@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+vcl/
+venv/
+.venv/
+env/
+.env
+
+# Database
+instance/
+*.db
+
+# Vercel
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db

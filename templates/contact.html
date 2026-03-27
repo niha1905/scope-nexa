@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-navy py-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-5xl md:text-7xl font-heading font-black text-white mb-6 tracking-tight">Let's Build the Future</h1>
+            <p class="text-2xl text-blue-200 tracking-wide font-light leading-relaxed">Book a consultation or discover your organization's AI readiness score in minutes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Area -->
+<section class="py-16 bg-silver/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Let's Build Column (Form & Calendly) -->
+            <div class="lg:col-span-8 space-y-8" data-aos="fade-right">
+                
+                <!-- Contact Form Card -->
+                <div class="bg-white rounded-2xl shadow-premium overflow-hidden border border-gray-100">
+                    <div class="bg-gradient-to-r from-navy to-blue-900 px-8 py-6 text-white flex justify-between items-center">
+                        <h3 class="text-2xl font-heading font-bold">Request a Consultation</h3>
+                        <svg class="w-6 h-6 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    
+                    <div class="p-8">
+                        <form action="{{ url_for('contact') }}" method="POST" class="space-y-6">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                                    <input type="text" name="name" required class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Work Email <span class="text-accent">*</span></label>
+                                    <input type="email" name="email" required class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Company Name</label>
+                                    <input type="text" name="company" class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Company Size</label>
+                                    <select name="company_size" class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg">
+                                        <option value="">Select Size</option>
+                                        <option value="1-50">1-50 Employees</option>
+                                        <option value="51-200">51-200 Employees</option>
+                                        <option value="201-1000">201-1000 Employees</option>
+                                        <option value="1000+">1000+ Employees</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Industry</label>
+                                    <input type="text" name="industry" placeholder="e.g. Finance, Healthcare, Retail" class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Department</label>
+                                    <input type="text" name="departments_text" placeholder="e.g. HR, Operations, Sales" class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">Current AI Readiness Level</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <label class="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 group">
+                                        <input type="radio" name="readiness_level" value="Exploring" class="text-accent focus:ring-accent w-5 h-5">
+                                        <span class="text-sm font-medium text-gray-700 group-hover:text-navy">Just Exploring</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 group">
+                                        <input type="radio" name="readiness_level" value="Experimenting" class="text-accent focus:ring-accent w-5 h-5">
+                                        <span class="text-sm font-medium text-gray-700 group-hover:text-navy">Piloting Tools</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 group">
+                                        <input type="radio" name="readiness_level" value="Scaling" class="text-accent focus:ring-accent w-5 h-5">
+                                        <span class="text-sm font-medium text-gray-700 group-hover:text-navy">Scaling AI</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Specific Challenges / Goals</label>
+                                <textarea name="message" rows="4" placeholder="Tell us about your specific goals or challenges..." class="w-full p-4 border border-gray-200 rounded-xl focus:ring-4 focus:ring-accent/20 focus:border-accent outline-none transition-all duration-300 bg-gray-50 hover:bg-white text-lg"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary w-full py-5 text-xl tracking-wide uppercase">Request Consultation</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Calendly Integration Section -->
+                <div class="bg-white rounded-2xl shadow-premium overflow-hidden border border-gray-100 p-8 text-center mt-8">
+                    <h3 class="text-2xl font-heading font-bold text-navy mb-4">Book Directly</h3>
+                    <p class="text-gray-600 mb-6">Skip the form and choose a time that works best for your team's introductory consultation.</p>
+                    
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget w-full rounded-xl" data-url="https://calendly.com/nihaarikas1012" style="min-width:320px;height:650px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+                
+            </div>
+            
+            <!-- Sidebar (Interactive Feature) -->
+            <div class="lg:col-span-4" data-aos="fade-left">
+                
+                <!-- Advanced Feature: AI Readiness Assessment -->
+                <div class="bg-gradient-to-br from-navy to-blue-900 rounded-3xl shadow-[0_20px_50px_-10px_rgba(10,31,68,0.6)] p-2 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left opacity-20 z-0"></div>
+                    <div class="bg-navy rounded-2xl p-8 h-full relative z-10 border border-white/5">
+                        <div class="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-xl mb-6 text-accent shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="text-3xl font-heading font-black text-white mb-4">AI Readiness Assessment</h3>
+                        <p class="text-blue-200 mb-8 text-lg font-light leading-relaxed">
+                            Discover where your organization stands in the intelligent economy. Take our interactive 2-minute diagnostic to receive a custom capability score and instant actionable insights.
+                        </p>
+                        
+                        <!-- Mini Assessment Form -->
+                        <form action="{{ url_for('assessment') }}" method="POST" class="space-y-4 bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
+                                <input type="text" name="name" required class="w-full px-3 py-2 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Work Email</label>
+                                <input type="email" name="email" required class="w-full px-3 py-2 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent text-sm">
+                            </div>
+                            
+                            <hr class="border-white/10 my-4">
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs text-white mb-1">1. Does your team currently use Generative AI tools daily?</label>
+                                    <select name="q1" class="w-full px-2 py-1.5 rounded bg-white/10 border border-white/20 text-white text-xs">
+                                        <option value="0" class="text-black">No, strictly prohibited</option>
+                                        <option value="5" class="text-black">Some individuals unofficially</option>
+                                        <option value="10" class="text-black">Yes, officially adopted</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-white mb-1">2. Do you have structured AI usage policies?</label>
+                                    <select name="q2" class="w-full px-2 py-1.5 rounded bg-white/10 border border-white/20 text-white text-xs">
+                                        <option value="0" class="text-black">No formal policies</option>
+                                        <option value="5" class="text-black">In drafting phase</option>
+                                        <option value="10" class="text-black">Yes, documented & enforced</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-white mb-1">3. Is your internal data structured for ML analysis?</label>
+                                    <select name="q3" class="w-full px-2 py-1.5 rounded bg-white/10 border border-white/20 text-white text-xs">
+                                        <option value="0" class="text-black">Siloed & messy</option>
+                                        <option value="5" class="text-black">Partially structured databases</option>
+                                        <option value="10" class="text-black">Yes, data lake/warehouse ready</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-accent hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition-all duration-300 text-lg mt-6 flex items-center justify-center gap-2 hover:-translate-y-1 shadow-[0_10px_20px_-5px_rgba(46,107,255,0.4)]">
+                                Generate Score <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mt-6">
+                    <h4 class="font-heading font-bold text-navy mb-4 border-b pb-2">Direct Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-50 text-accent flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-sm font-bold text-gray-700">Email</span>
+                                <a href="mailto:nihaarika@scopehr.in" class="text-sm text-accent hover:underline">nihaarika@scopehr.in</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-50 text-accent flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-sm font-bold text-gray-700">Phone</span>
+                                <a href="tel:8778673821" class="text-sm text-gray-600 hover:text-accent hover:underline">8778673821</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-50 text-accent flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-sm font-bold text-gray-700">Headquarters</span>
+                                <span class="text-sm text-gray-600">Scope HR Tower, Tech District</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}
