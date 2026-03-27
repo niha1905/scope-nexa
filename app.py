@@ -39,9 +39,19 @@ class Assessment(db.Model):
     details = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
+# Check if running on Vercel (read-only filesystem)
+IS_VERCEL = "VERCEL" in os.environ
+
 # Ensure tables are created securely within application context
+# On Vercel, db.create_all() might fail if using SQLite on a read-only filesystem
 with app.app_context():
-    db.create_all()
+    try:
+        db.create_all()
+    except Exception as e:
+        print(f"Database initialization skipped or failed: {e}")
+        if not IS_VERCEL:
+            # Re-raise if not on Vercel to help local debugging
+            raise e
 
 @app.route('/')
 def home():
